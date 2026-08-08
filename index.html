@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Md. Foysal Hossain Sohag — Internal Audit, Design & Consulting</title>
+<meta name="description" content="Md. Foysal Hossain Sohag — Senior Internal Audit Executive, Excel Dashboard Designer, Graphic Designer & Business Writer.">
+
+<!-- Block indexing by search engines and AI crawlers -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate, noai, noimageai">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF7;
+    --paper-dim:#F1F1EC;
+    --ink:#15181B;
+    --ink-soft:#4B5157;
+    --muted:#8A8F94;
+    --line:#DEE1DC;
+    --line-strong:#C6CAC3;
+    --accent:#1C7C4B;
+    --accent-soft:#E7F1EA;
+    --white:#FFFFFF;
+    --radius:2px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', -apple-system, sans-serif;
+    line-height:1.6;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  .cell-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .cell-tag::before{
+    content:"";
+    width:7px; height:7px;
+    background:var(--accent);
+    display:inline-block;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    line-height:1.12;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(250,250,247,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 28px;
+    max-width:1080px;
+    margin:0 auto;
+  }
+  .brand{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:500;
+    font-size:14px;
+    letter-spacing:0.02em;
+  }
+  .brand span{color:var(--accent);}
+
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:28px;
+  }
+  nav a{
+    text-decoration:none;
+    font-size:14px;
+    color:var(--ink-soft);
+    position:relative;
+    padding:4px 0;
+  }
+  nav a:hover{color:var(--ink);}
+  nav a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:0;
+    width:0%; height:1px;
+    background:var(--accent);
+    transition:width 0.25s ease;
+  }
+  nav a:hover::after{width:100%;}
+
+  .nav-cta{
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .btn-wa-small{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    text-decoration:none;
+    background:var(--ink);
+    color:var(--paper);
+    padding:9px 16px;
+    border-radius:var(--radius);
+    white-space:nowrap;
+  }
+  .btn-wa-small:hover{background:var(--accent);}
+
+  .menu-toggle{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:6px;
+  }
+  .menu-toggle span{
+    width:22px; height:2px;
+    background:var(--ink);
+    display:block;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:72px 0 64px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:48px;
+    align-items:start;
+  }
+  .hero-eyebrow{margin-bottom:22px;}
+  .hero h1{
+    font-size:clamp(34px, 5vw, 54px);
+    margin-bottom:20px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--accent);
+  }
+  .hero-lede{
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin-bottom:32px;
+  }
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    text-decoration:none;
+    padding:13px 22px;
+    border-radius:var(--radius);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid var(--ink);
+    transition:background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .btn-primary{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .btn-primary:hover{background:var(--accent); border-color:var(--accent);}
+  .btn-outline{
+    background:transparent;
+    color:var(--ink);
+  }
+  .btn-outline:hover{border-color:var(--accent); color:var(--accent);}
+
+  /* profile card */
+  .profile-card{
+    border:1px solid var(--line-strong);
+    background:var(--white);
+    padding:28px;
+  }
+  .profile-photo{
+    width:96px;
+    height:96px;
+    border-radius:50%;
+    overflow:hidden;
+    margin-bottom:18px;
+    border:1px solid var(--line-strong);
+  }
+  .profile-photo svg{display:block; width:100%; height:100%;}
+  .profile-card h3{
+    font-size:19px;
+    margin-bottom:4px;
+  }
+  .profile-role{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-bottom:18px;
+  }
+  .chip-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:20px;
+  }
+  .chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    padding:6px 10px;
+    background:var(--paper-dim);
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+  }
+  .profile-facts{list-style:none; border-top:1px solid var(--line);}
+  .profile-facts li{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+    font-size:13px;
+  }
+  .profile-facts .k{color:var(--muted); font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.05em;}
+  .profile-facts .v{color:var(--ink); text-align:right; font-weight:500;}
+
+  .work-icon{
+    width:40px;
+    height:40px;
+    margin-bottom:16px;
+    color:var(--accent);
+  }
+  .work-icon svg{width:100%; height:100%;}
+
+  /* education */
+  .edu-grid{
+    display:flex;
+    flex-direction:column;
+  }
+  .edu-item{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .edu-item:first-child{border-top:1px solid var(--line);}
+  .edu-icon{
+    width:34px;
+    height:34px;
+    flex:none;
+    color:var(--accent);
+  }
+  .edu-icon svg{width:100%; height:100%;}
+  .edu-degree{
+    font-family:'Fraunces', serif;
+    font-size:18px;
+    color:var(--ink);
+    margin-bottom:4px;
+  }
+  .edu-school{
+    font-size:13.5px;
+    color:var(--muted);
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:76px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:44px;
+    flex-wrap:wrap;
+  }
+  .section-head h2{font-size:clamp(26px, 3.4vw, 36px);}
+  .section-head p{
+    color:var(--muted);
+    font-size:14px;
+    max-width:34ch;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+  }
+  .about-copy p{
+    color:var(--ink-soft);
+    margin-bottom:18px;
+    font-size:15.5px;
+  }
+  .stat-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .stat{
+    background:var(--white);
+    padding:24px 20px;
+  }
+  .stat .num{
+    font-family:'Fraunces', serif;
+    font-size:28px;
+    color:var(--accent);
+    display:block;
+    letter-spacing:-0.01em;
+  }
+  .stat .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--muted);
+  }
+
+  /* ---------- SERVICES ---------- */
+  .service-row{
+    display:grid;
+    grid-template-columns:70px 1fr 200px;
+    align-items:center;
+    padding:20px 0;
+    border-bottom:1px solid var(--line);
+    gap:16px;
+  }
+  .service-row:first-of-type{border-top:1px solid var(--line);}
+  .service-ref{
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+  }
+  .service-ref svg{width:26px; height:26px;}
+  .service-name{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:500;
+  }
+  .service-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    text-align:right;
+  }
+
+  /* ---------- WORK GRID ---------- */
+  .work-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .work-card{
+    background:var(--white);
+    padding:32px 28px;
+    min-height:190px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:background 0.2s ease;
+  }
+  .work-card:hover{background:var(--accent-soft);}
+  .work-card .k{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--muted);
+    margin-bottom:18px;
+    display:block;
+  }
+  .work-card h3{font-size:20px; margin-bottom:10px;}
+  .work-card p{color:var(--ink-soft); font-size:14px;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .testi-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    padding:26px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .testi-card p.quote{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:16px;
+    color:var(--ink);
+    margin-bottom:20px;
+  }
+  .testi-meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--muted);
+    border-top:1px solid var(--line);
+    padding-top:12px;
+  }
+
+  /* ---------- GUARANTEES ---------- */
+  .guarantee-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .guarantee{
+    background:var(--white);
+    padding:30px 24px;
+  }
+  .guarantee .cell-tag{margin-bottom:14px;}
+  .guarantee h3{font-size:18px; font-weight:500;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .contact .cell-tag{color:#7FD3A3;}
+  .contact .cell-tag::before{background:#7FD3A3;}
+  .contact h2{color:var(--paper);}
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:48px;
+    align-items:start;
+  }
+  .contact-lede{
+    color:#B7BCB9;
+    font-size:16px;
+    max-width:46ch;
+    margin-bottom:32px;
+  }
+  .contact-list{list-style:none;}
+  .contact-list li{
+    border-bottom:1px solid #2B2F31;
+    padding:16px 0;
+  }
+  .contact-list li:first-child{border-top:1px solid #2B2F31;}
+  .contact-list a{
+    text-decoration:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:15px;
+  }
+  .contact-list a:hover{color:#7FD3A3;}
+  .contact-list .k{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:#8A9089;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+  .wa-block{
+    background:#1D2123;
+    border:1px solid #2B2F31;
+    padding:28px;
+  }
+  .wa-block p{color:#B7BCB9; font-size:14px; margin-bottom:18px;}
+  .btn-wa-large{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+    text-decoration:none;
+    background:#25D366;
+    color:#0A1F14;
+    font-weight:500;
+    padding:15px 22px;
+    border-radius:var(--radius);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    width:100%;
+    justify-content:center;
+  }
+  .btn-wa-large:hover{background:#1EB959;}
+
+  footer{
+    background:var(--ink);
+    color:#8A9089;
+    padding:24px 0 32px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    border-top:1px solid #2B2F31;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr; gap:32px;}
+    .work-grid{grid-template-columns:1fr;}
+    .testi-grid{grid-template-columns:1fr;}
+    .guarantee-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr; gap:36px;}
+    .service-row{grid-template-columns:44px 1fr; row-gap:6px;}
+    .service-tag{grid-column:2/3; text-align:left;}
+  }
+
+  @media (max-width: 720px){
+    nav ul{
+      position:fixed;
+      top:60px; left:0; right:0;
+      background:var(--paper);
+      border-bottom:1px solid var(--line);
+      flex-direction:column;
+      padding:16px 28px 24px;
+      gap:16px;
+      transform:translateY(-130%);
+      transition:transform 0.25s ease;
+    }
+    nav ul.open{transform:translateY(0);}
+    .menu-toggle{display:flex;}
+    .nav-cta .btn-wa-small{padding:8px 12px; font-size:11.5px;}
+  }
+
+  @media (max-width: 480px){
+    .hero{padding:52px 0 44px;}
+    section{padding:56px 0;}
+    .wrap{padding:0 20px;}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">FOYSAL<span>.</span>SOHAG</div>
+    <nav>
+      <ul id="navList">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn-wa-small" href="https://wa.me/8801888888888" target="_blank" rel="noopener">WhatsApp →</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="hero-eyebrow cell-tag">Profile</div>
+        <h1>Turning complex numbers<br>into <em>clear</em>, compelling visuals.</h1>
+        <p class="hero-lede">I'm Md. Foysal Hossain Sohag — a Senior Executive in Internal Audit with 8+ years of experience, currently pursuing ICMAB at Intermediate level. Alongside audit and accounting, I've built a parallel practice in tech and graphic design, specialising in insightful Excel dashboards and clean, professional visual work.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">View My Work</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/mdfoysalhossainsohag/" target="_blank" rel="noopener">LinkedIn Profile</a>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-photo">
+          <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+            <rect width="96" height="96" fill="#15181B"/>
+            <circle cx="48" cy="38" r="17" fill="#3C4247"/>
+            <path d="M14 90c2-19 17-30 34-30s32 11 34 30" fill="#3C4247"/>
+            <text x="48" y="52" font-family="IBM Plex Mono, monospace" font-size="15" fill="#7FD3A3" text-anchor="middle" dy="0">MFS</text>
+          </svg>
+        </div>
+        <h3>Md. Foysal Hossain Sohag</h3>
+        <div class="profile-role">Senior Executive, Internal Audit — Dekko ISHO Group</div>
+        <div class="chip-row">
+          <span class="chip">ITP</span>
+          <span class="chip">ICMAB Intermediate</span>
+          <span class="chip">Excel Dashboards</span>
+        </div>
+        <ul class="profile-facts">
+          <li><span class="k">Internal Audit Exp.</span><span class="v">8+ Years, Continuing</span></li>
+          <li><span class="k">Qualification</span><span class="v">ICMAB — Intermediate Level</span></li>
+          <li><span class="k">Tax Credential</span><span class="v">ITP (Income Tax Professional)</span></li>
+          <li><span class="k">Creative Practice</span><span class="v">Design, CV &amp; Business Writing</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <div class="cell-tag" style="margin-bottom:18px;">About Me</div>
+        <h2 style="font-size:clamp(24px,3vw,32px); margin-bottom:20px;">10+ years across brands, interfaces & spreadsheets.</h2>
+        <p>My core focus is Internal Audit — 8+ years and counting, alongside continuing studies toward ICMAB at Intermediate level. That discipline of precision and control carries over into my creative work across brands, user experiences, interfaces, systems, products and education.</p>
+        <p>Whether it's a management report, a booklet, or a business card, my goal stays the same: take something complex and make it clear, credible and easy to act on.</p>
+        <a class="btn btn-outline" href="https://foysal.info/#" target="_blank" rel="noopener">View My Works</a>
+      </div>
+      <div class="stat-grid">
+        <div class="stat"><span class="num">8+</span><span class="label">Years Internal Audit</span></div>
+        <div class="stat"><span class="num">10+</span><span class="label">Years Design Practice</span></div>
+        <div class="stat"><span class="num">ICMAB</span><span class="label">Intermediate Level</span></div>
+        <div class="stat"><span class="num">5</span><span class="label">Core Services</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Education</h2>
+        <p>Academic foundation in accounting and information systems.</p>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-item">
+          <div class="edu-icon">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 4L2 9l11 5 11-5-11-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M6 12v6c0 1.7 3.1 3.5 7 3.5s7-1.8 7-3.5v-6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <line x1="23" y1="9" x2="23" y2="17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="edu-degree">MBA — Accounting &amp; Information Systems</div>
+            <div class="edu-school">University of Dhaka</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-icon">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 4L2 9l11 5 11-5-11-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M6 12v6c0 1.7 3.1 3.5 7 3.5s7-1.8 7-3.5v-6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <line x1="23" y1="9" x2="23" y2="17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="edu-degree">BBA — Accounting</div>
+            <div class="edu-school">Northern University Bangladesh</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-icon">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 4L2 9l11 5 11-5-11-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M6 12v6c0 1.7 3.1 3.5 7 3.5s7-1.8 7-3.5v-6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <line x1="23" y1="9" x2="23" y2="17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="edu-degree">ICMAB — Intermediate Level (Continuing)</div>
+            <div class="edu-school">Institute of Cost &amp; Management Accountants of Bangladesh</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Services Provided</h2>
+        <p>10+ years of design experience — working with brands, interfaces, systems, products and education.</p>
+      </div>
+
+      <div class="service-row">
+        <div class="service-ref">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="2" width="16" height="22" rx="2" stroke="currentColor" stroke-width="1.6"/>
+            <line x1="8" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="9" cy="12" r="1.3" fill="currentColor"/>
+            <circle cx="13" cy="12" r="1.3" fill="currentColor"/>
+            <circle cx="17" cy="12" r="1.3" fill="currentColor"/>
+            <circle cx="9" cy="16.5" r="1.3" fill="currentColor"/>
+            <circle cx="13" cy="16.5" r="1.3" fill="currentColor"/>
+            <circle cx="17" cy="16.5" r="1.3" fill="currentColor"/>
+            <circle cx="9" cy="21" r="1.3" fill="currentColor"/>
+            <circle cx="13" cy="21" r="1.3" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="service-name">Accounting &amp; Auditing Services</div>
+        <div class="service-tag">Finance</div>
+      </div>
+      <div class="service-row">
+        <div class="service-ref">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 3a10 10 0 100 20c1.4 0 2.2-1 2.2-2.2 0-.6-.2-1.1-.6-1.5-.4-.4-.6-.9-.6-1.5 0-1.2.9-2.2 2.2-2.2H18a5 5 0 005-5c0-4-4.5-7.6-10-7.6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <circle cx="8.5" cy="11.5" r="1.3" fill="currentColor"/>
+            <circle cx="12.5" cy="8" r="1.3" fill="currentColor"/>
+            <circle cx="17" cy="10.5" r="1.3" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="service-name">Graphics Design</div>
+        <div class="service-tag">Creative</div>
+      </div>
+      <div class="service-row">
+        <div class="service-ref">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 3h10l5 5v15a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M16 3v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <line x1="8" y1="14" x2="17" y2="14" stroke="currentColor" stroke-width="1.4"/>
+            <line x1="8" y1="18" x2="17" y2="18" stroke="currentColor" stroke-width="1.4"/>
+            <line x1="8" y1="22" x2="13" y2="22" stroke="currentColor" stroke-width="1.4"/>
+          </svg>
+        </div>
+        <div class="service-name">Tech Article Writing</div>
+        <div class="service-tag">Writing</div>
+      </div>
+      <div class="service-row">
+        <div class="service-ref">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 4L2 9l11 5 11-5-11-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M6 12v6c0 1.7 3.1 3.5 7 3.5s7-1.8 7-3.5v-6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <line x1="23" y1="9" x2="23" y2="17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="service-name">Academic Assistance (BBA &amp; MBA)</div>
+        <div class="service-tag">Academic</div>
+      </div>
+      <div class="service-row">
+        <div class="service-ref">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 15l17-10-6 21-4-8-7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <line x1="14" y1="18" x2="20" y2="24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="service-name">Social Media Marketing</div>
+        <div class="service-tag">Marketing</div>
+      </div>
+
+      <div style="margin-top:36px;">
+        <a class="btn btn-primary" href="https://fiverr.com/mfohsbd" target="_blank" rel="noopener">Hire Me on Fiverr</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Recent Works</h2>
+        <p>Check out a sample of what I've been building lately.</p>
+      </div>
+      <div class="work-grid">
+        <div class="work-card">
+          <span class="k">Dashboards</span>
+          <div class="work-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="34" height="34" rx="2" stroke="currentColor" stroke-width="1.6"/>
+              <rect x="8" y="21" width="5" height="11" fill="currentColor"/>
+              <rect x="17.5" y="14" width="5" height="18" fill="currentColor" opacity="0.65"/>
+              <rect x="27" y="9" width="5" height="23" fill="currentColor" opacity="0.35"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Excel Dashboard Design</h3>
+            <p>Expert in designing interactive and insightful Excel dashboards.</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <span class="k">Print</span>
+          <div class="work-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 5h18a2 2 0 012 2v28l-11-5-11 5V7a2 2 0 012-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <line x1="13" y1="13" x2="27" y2="13" stroke="currentColor" stroke-width="1.4"/>
+              <line x1="13" y1="19" x2="27" y2="19" stroke="currentColor" stroke-width="1.4"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Booklet Design</h3>
+            <p>Crafting professional booklets and corporate portfolios.</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <span class="k">Branding</span>
+          <div class="work-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="9" width="34" height="22" rx="2.5" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="12" cy="20" r="4" stroke="currentColor" stroke-width="1.4"/>
+              <line x1="21" y1="16" x2="31" y2="16" stroke="currentColor" stroke-width="1.4"/>
+              <line x1="21" y1="21" x2="31" y2="21" stroke="currentColor" stroke-width="1.4"/>
+              <line x1="21" y1="26" x2="27" y2="26" stroke="currentColor" stroke-width="1.4"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Business Card Design</h3>
+            <p>Unique, professional business card designs that make a lasting impression.</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <span class="k">Visual</span>
+          <div class="work-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 13a2 2 0 012-2h5l2-3h9l2 3h5a2 2 0 012 2v17a2 2 0 01-2 2H6a2 2 0 01-2-2V13z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <circle cx="20" cy="22" r="6" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Photography</h3>
+            <p>Capturing moments through my lens, one shot at a time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What Makes Me Sparkle</h2>
+        <p>A dedicated professional turning complex data into compelling visuals.</p>
+      </div>
+
+      <div class="testi-grid">
+        <div class="testi-card">
+          <p class="quote">"I asked Sohag to do this 3rd project for me because I was super pleased with the first two. He is always polite and professional and his work is fabulous."</p>
+          <div class="testi-meta">ANONYMOUS · 3 MONTHS AGO</div>
+        </div>
+        <div class="testi-card">
+          <p class="quote">"Sohag has been extraordinary to work with. He has gone the extra mile to make sure things are just like I need them."</p>
+          <div class="testi-meta">ANONYMOUS · 5 DAYS AGO</div>
+        </div>
+        <div class="testi-card">
+          <p class="quote">"A great job as always!"</p>
+          <div class="testi-meta">ANONYMOUS · 3 WEEKS AGO</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEES -->
+  <section id="guarantees">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>My Guarantees</h2>
+        <p>Committed to delivering excellence and client satisfaction.</p>
+      </div>
+      <div class="guarantee-grid">
+        <div class="guarantee">
+          <div class="work-icon" style="width:28px; height:28px; margin-bottom:14px;">
+            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2l9 4v7c0 6.5-3.9 10.9-9 13-5.1-2.1-9-6.5-9-13V6l9-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M10 14l2.8 2.8L18.5 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Reliable Support</h3>
+        </div>
+        <div class="guarantee">
+          <div class="work-icon" style="width:28px; height:28px; margin-bottom:14px;">
+            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 3c-4.5 0-8 3.3-8 7.6 0 4 3 6 3 8.4v2h10v-2c0-2.4 3-4.4 3-8.4C22 6.3 18.5 3 14 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <line x1="11" y1="24" x2="17" y2="24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Creative Designs</h3>
+        </div>
+        <div class="guarantee">
+          <div class="work-icon" style="width:28px; height:28px; margin-bottom:14px;">
+            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="14" cy="14" r="11" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M14 8v6l4.5 2.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Timely Delivery</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="cell-tag">Get In Touch</div>
+        <h2 style="margin-top:18px; font-size:clamp(26px,3.4vw,36px);">Let's connect and build something clear.</h2>
+        <p class="contact-lede">Have a project in mind — a dashboard, a design, or a report that needs to look as good as it reads? Reach out directly, no forms needed.</p>
+        <ul class="contact-list">
+          <li>
+            <a href="#" class="cf-link" data-cf-mobile>
+              <span class="k">Mobile</span>
+              <span class="cf-text">Show number</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="cf-link" data-cf-email>
+              <span class="k">Email</span>
+              <span class="cf-text">Show email</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="cf-link" data-cf-website>
+              <span class="k">Website</span>
+              <span class="cf-text">www.foysal.info</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="cf-link" data-cf-linkedin>
+              <span class="k">LinkedIn</span>
+              <span class="cf-text">mdfoysalhossainsohag</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="cf-link" data-cf-fiverr>
+              <span class="k">Fiverr</span>
+              <span class="cf-text">mfohsbd</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="wa-block">
+        <div class="cell-tag" style="margin-bottom:14px;">Fastest Reply</div>
+        <p>Message me directly on WhatsApp — I usually reply within a few hours.</p>
+        <a class="btn-wa-large cf-link" href="#" data-cf-whatsapp>
+          Message on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:10px;">
+    <span>© <span id="year"></span> Md. Foysal Hossain Sohag</span>
+    <span>Internal Audit · Design · Consulting</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const menuToggle = document.getElementById('menuToggle');
+  const navList = document.getElementById('navList');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navList.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navList.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navList.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', false);
+    });
+  });
+
+  /* ---------- Contact info de-obfuscation ----------
+     Values below are base64-encoded and reversed so plain-text
+     email/phone/links don't sit in the page source for scrapers.
+     They are only reconstructed client-side, on user interaction. */
+  function cfDecode(s){
+    return atob(s.split('').reverse().join(''));
+  }
+  const CF = {
+    mobileHref:   '3EDNzAjNzEDOxAjOsVGd',
+    mobileText:   '=cTM0MDM2MTM4EDM',
+    emailHref:    'vZmbp5CbhNXevZGQvxGblhmOvRHbpFWb',
+    emailText:    '=8mZulmLsF2c59mZA9GbsVGa',
+    websiteHref:  '=8mZulmLsF2c59mZuc3d39yL6MHc0RHa',
+    linkedinHref: '==wLnFGavNnbpF2cz9GasF2c59mZk12Lul2Lt92Yu4WakV2aulGbuc3d39yL6MHc0RHa',
+    fiverrHref:   '=QmYzh2bm12Lt92YuInclZXam9yL6MHc0RHa',
+    whatsappHref: '4EjMyYDO3cjNxADO48SZt5SY39yL6MHc0RHa'
+  };
+
+  function wireContactLink(selector, hrefKey, textKey){
+    const el = document.querySelector(selector);
+    if(!el) return;
+    const href = cfDecode(CF[hrefKey]);
+    el.setAttribute('href', href);
+    if(!href.startsWith('tel:') && !href.startsWith('mailto:')){
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener');
+    }
+    if(textKey){
+      const textEl = el.querySelector('.cf-text');
+      if(textEl) textEl.textContent = cfDecode(CF[textKey]);
+    }
+  }
+
+  wireContactLink('[data-cf-mobile]',   'mobileHref',   'mobileText');
+  wireContactLink('[data-cf-email]',    'emailHref',    'emailText');
+  wireContactLink('[data-cf-website]',  'websiteHref');
+  wireContactLink('[data-cf-linkedin]', 'linkedinHref');
+  wireContactLink('[data-cf-fiverr]',   'fiverrHref');
+  wireContactLink('[data-cf-whatsapp]', 'whatsappHref');
+</script>
+
+</body>
+</html>

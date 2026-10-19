@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Md. Foysal Hossain Sohag</title>
+<meta name="description" content="LinkedIn posts on Internal Audit, Finance and Data by Md. Foysal Hossain Sohag.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF7;
+    --paper-dim:#F1F1EC;
+    --ink:#15181B;
+    --ink-soft:#4B5157;
+    --muted:#8A8F94;
+    --line:#DEE1DC;
+    --line-strong:#C6CAC3;
+    --accent:#1C7C4B;
+    --accent-soft:#E7F1EA;
+    --white:#FFFFFF;
+    --radius:2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', -apple-system, sans-serif;
+    line-height:1.6;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  a:focus-visible, button:focus-visible, input:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+
+  .cell-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .cell-tag::before{content:""; width:7px; height:7px; background:var(--accent); display:inline-block;}
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    line-height:1.12;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+
+  /* ---------- HEADER (same as foysal.info) ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(250,250,247,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px; max-width:1080px; margin:0 auto;
+  }
+  .brand{font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:14px; letter-spacing:0.02em; text-decoration:none;}
+  .brand span{color:var(--accent);}
+  nav ul{list-style:none; display:flex; gap:28px;}
+  nav a{text-decoration:none; font-size:14px; color:var(--ink-soft); position:relative; padding:4px 0;}
+  nav a:hover{color:var(--ink);}
+  nav a::after{content:""; position:absolute; left:0; bottom:0; width:0%; height:1px; background:var(--accent); transition:width 0.25s ease;}
+  nav a:hover::after{width:100%;}
+  .nav-cta{display:flex; align-items:center; gap:16px;}
+  .btn-wa-small{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px; text-decoration:none;
+    background:var(--ink); color:var(--paper); padding:9px 16px; border-radius:var(--radius); white-space:nowrap;
+  }
+  .btn-wa-small:hover{background:var(--accent);}
+  .menu-toggle{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px;}
+  .menu-toggle span{width:22px; height:2px; background:var(--ink); display:block;}
+
+  /* ---------- BLOG ---------- */
+  section{padding:76px 0;}
+  .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:36px; flex-wrap:wrap;}
+  .section-head .cell-tag{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(26px, 3.4vw, 36px);}
+  .section-head p{color:var(--muted); font-size:14px; max-width:34ch;}
+
+  .tools{display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-bottom:14px;}
+  input[type=search]{
+    flex:1 1 240px; padding:11px 14px; border:1px solid var(--line-strong); border-radius:var(--radius);
+    background:var(--white); color:var(--ink); font:inherit; font-size:14px;
+  }
+  .tags{display:flex; flex-wrap:wrap; gap:8px;}
+  button{font:inherit; cursor:pointer;}
+  .chip{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; padding:7px 12px;
+    border:1px solid var(--line-strong); background:transparent; color:var(--ink); border-radius:var(--radius);
+    transition:background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .chip:hover{border-color:var(--accent); color:var(--accent);}
+  .chip[aria-pressed=true]{background:var(--ink); border-color:var(--ink); color:var(--paper);}
+  #count{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--muted); margin-bottom:24px;}
+
+  #list{display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 440px), 1fr)); gap:24px; align-items:start;}
+  #list h2{grid-column:1/-1; margin-top:18px; font-size:28px; padding-bottom:10px; border-bottom:1px solid var(--line-strong);}
+  #list h2:first-child{margin-top:0;}
+  .card{background:var(--white); border:1px solid var(--line-strong); padding:22px; min-width:0;}
+  .card .k{display:flex; flex-wrap:wrap; gap:8px; align-items:center; font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted); margin-bottom:14px;}
+  .card .k .t{background:var(--accent-soft); color:var(--accent); padding:2px 8px; border-radius:var(--radius);}
+  .card h3{font-size:20px; margin-bottom:8px;}
+  .note{color:var(--ink-soft); font-size:14px; margin-bottom:6px;}
+  .embed{margin-top:14px; min-height:120px; background:var(--paper-dim); display:grid; place-items:center; color:var(--muted); font-size:13px; text-align:center; overflow:hidden;}
+  .embed iframe{width:100%; border:0; display:block; background:#fff;}
+  .show{font-family:'IBM Plex Mono', monospace; font-size:13px; background:var(--ink); color:var(--paper); border:0; padding:12px 20px; border-radius:var(--radius);}
+  .show:hover{background:var(--accent);}
+  .open{display:inline-block; margin-top:12px; font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--accent);}
+  #more{
+    display:block; margin:36px auto 0; font-family:'IBM Plex Mono', monospace; font-size:13px;
+    padding:13px 22px; border:1px solid var(--ink); background:transparent; color:var(--ink); border-radius:var(--radius);
+    transition:border-color 0.2s ease, color 0.2s ease;
+  }
+  #more:hover{border-color:var(--accent); color:var(--accent);}
+
+  .follow{margin-top:56px; padding:28px; border:1px solid var(--line-strong); background:var(--white); display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:center;}
+  .follow p{color:var(--ink-soft); max-width:46ch;}
+  .btn{
+    font-family:'IBM Plex Mono', monospace; font-size:13px; text-decoration:none; padding:13px 22px;
+    border-radius:var(--radius); display:inline-flex; align-items:center; gap:8px; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); transition:background 0.2s ease, border-color 0.2s ease;
+  }
+  .btn:hover{background:var(--accent); border-color:var(--accent);}
+
+  /* ---------- FOOTER (same as foysal.info) ---------- */
+  footer{
+    background:var(--ink); color:#8A9089; padding:24px 0 32px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; border-top:1px solid #2B2F31;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 720px){
+    nav ul{
+      position:fixed; top:60px; left:0; right:0; background:var(--paper); border-bottom:1px solid var(--line);
+      flex-direction:column; padding:16px 28px 24px; gap:16px; transform:translateY(-130%); transition:transform 0.25s ease;
+    }
+    nav ul.open{transform:translateY(0);}
+    .menu-toggle{display:flex;}
+    .nav-cta .btn-wa-small{padding:8px 12px; font-size:11.5px;}
+  }
+  @media (max-width: 480px){
+    section{padding:56px 0;}
+    .wrap{padding:0 20px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a class="brand" id="brand" href="#">FOYSAL<span>.</span>INFO</a>
+    <nav>
+      <ul id="navList">
+        <li><a data-page="#about" href="#">About</a></li>
+        <li><a data-page="#education" href="#">Education</a></li>
+        <li><a data-page="#services" href="#">Services</a></li>
+        <li><a data-page="#work" href="#">Work</a></li>
+        <li><a data-page="#testimonials" href="#">Testimonials</a></li>
+        <li><a data-page="#contact" href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn-wa-small" href="#" data-cf-whatsapp target="_blank" rel="noopener">WhatsApp →</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="cell-tag">Blog</div>
+          <h2>LinkedIn Posts</h2>
+        </div>
+        <p>Insights on Internal Audit, Finance &amp; Data, collected in one place.</p>
+      </div>
+
+      <div class="tools">
+        <input type="search" id="q" placeholder="Search posts" aria-label="Search posts">
+        <div class="tags" id="tags"></div>
+      </div>
+      <p id="count" aria-live="polite"></p>
+
+      <div id="list"></div>
+      <button id="more" hidden>Load more posts</button>
+
+      <div class="follow">
+        <p>Follow me on LinkedIn for more insights on Internal Audit, Finance &amp; Data.</p>
+        <a class="btn" href="https://www.linkedin.com/in/mdfoysalhossainsohag/" target="_blank" rel="noopener">LinkedIn Profile</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:10px;">
+    <span>© <span id="year"></span> Md. Foysal Hossain Sohag</span>
+    <span>Internal Audit · Design · Consulting</span>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   SITE SETTINGS
+   SITE_URL: where your main website lives. The header menu links
+   (About, Education, ...) and the logo point there.
+   ============================================================ */
+const SITE_URL = "https://foysal.info/";
+
+/* ============================================================
+   HOW TO ADD A POST
+   1. On LinkedIn open your public post, click the three dots, choose "Embed this post".
+   2. Copy ONLY the src="..." address from the code it gives you.
+   3. Paste a new block anywhere in the list below. Order does not matter,
+      posts are sorted by date automatically (newest first).
+
+   HOW TO REMOVE A POST: delete its block.
+
+   Fields:  date (YYYY-MM-DD, required)   title (required)
+            embed (the src address)       tags (list, optional)
+            note (short text, optional)   height (pixels, optional, default 600)
+            link (normal post URL, optional, adds an "Open on LinkedIn" link)
+   ============================================================ */
+const POSTS = [
+  {
+    date: "2026-10-13",
+    title: "Sample post: replace me",
+    tags: ["Finance"],
+    note: "Paste your embed address below to show the real post.",
+    embed: "",   // e.g. "https://www.linkedin.com/embed/feed/update/urn:li:share:1234567890"
+    link: ""
+  },
+  {
+    date: "2026-09-20",
+    title: "Another sample post",
+    tags: ["Internal Audit", "Data"],
+    embed: ""
+  }
+];
+
+/* Settings */
+const PAGE_SIZE = 8;     // posts shown at first and per "Load more"
+const AUTO_LOAD = true;  // true: embed loads as it nears the screen. false: visitor clicks "Show post"
+/* ============================================================ */
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* Header links go to the main site */
+document.getElementById("brand").href = SITE_URL;
+document.querySelectorAll("[data-page]").forEach(a => { a.href = SITE_URL + a.dataset.page; });
+
+/* Mobile menu (same behaviour as the main site) */
+const menuToggle = document.getElementById("menuToggle");
+const navList = document.getElementById("navList");
+menuToggle.addEventListener("click", () => {
+  const isOpen = navList.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", isOpen);
+});
+
+/* WhatsApp link, same obfuscation as the main site */
+function cfDecode(s){ return atob(s.split("").reverse().join("")); }
+const wa = document.querySelector("[data-cf-whatsapp]");
+wa.setAttribute("href", cfDecode("4EjMyYDO3cjNxADO48SZt5SY39yL6MHc0RHa"));
+
+/* ---------- Posts ---------- */
+const $ = id => document.getElementById(id);
+const sorted = POSTS.slice().sort((a, b) => b.date.localeCompare(a.date));
+const state = { tag: "All", q: "" };
+let cur = [], idx = 0, year = "";
+
+const io = "IntersectionObserver" in window
+  ? new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { mount(e.target); io.unobserve(e.target); }
+    }), { rootMargin: "600px" })
+  : null;
+
+function mount(box) {
+  if (box.dataset.done) return;
+  box.dataset.done = "1";
+  const f = document.createElement("iframe");
+  f.src = box.dataset.src;
+  f.height = box.dataset.h;
+  f.title = box.dataset.title;
+  f.loading = "lazy";
+  f.allowFullscreen = true;
+  box.replaceChildren(f);
+}
+
+function el(tag, cls, text) {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text) n.textContent = text;
+  return n;
+}
+
+function card(p) {
+  const c = el("article", "card");
+  const meta = el("div", "k");
+  meta.append(el("time", "", new Date(p.date + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })));
+  (p.tags || []).forEach(t => meta.append(el("span", "t", t)));
+  c.append(meta, el("h3", "", p.title));
+  if (p.note) c.append(el("p", "note", p.note));
+
+  const box = el("div", "embed");
+  if (!p.embed) {
+    box.textContent = "No embed address added yet for this post.";
+  } else {
+    box.dataset.src = p.embed;
+    box.dataset.h = p.height || 600;
+    box.dataset.title = p.title;
+    if (AUTO_LOAD && io) {
+      box.textContent = "Loading post…";
+      io.observe(box);
+    } else {
+      const b = el("button", "show", "Show post");
+      b.onclick = () => mount(box);
+      box.replaceChildren(b);
+    }
+  }
+  c.append(box);
+  if (p.link) {
+    const a = el("a", "open", "Open on LinkedIn →");
+    a.href = p.link; a.target = "_blank"; a.rel = "noopener";
+    c.append(a);
+  }
+  return c;
+}
+
+function showMore() {
+  const out = $("list");
+  cur.slice(idx, idx + PAGE_SIZE).forEach(p => {
+    const y = p.date.slice(0, 4);
+    if (y !== year) { year = y; out.append(el("h2", "", y)); }
+    out.append(card(p));
+  });
+  idx += PAGE_SIZE;
+  $("more").hidden = idx >= cur.length;
+}
+
+function reset() {
+  const q = state.q.trim().toLowerCase();
+  cur = sorted.filter(p =>
+    (state.tag === "All" || (p.tags || []).includes(state.tag)) &&
+    (!q || [p.title, p.note || "", (p.tags || []).join(" ")].join(" ").toLowerCase().includes(q)));
+  idx = 0; year = "";
+  $("list").replaceChildren();
+  $("count").textContent = cur.length + (cur.length === 1 ? " post" : " posts");
+  if (!cur.length) { $("list").append(el("p", "note", "No posts match. Try a different tag or search.")); $("more").hidden = true; return; }
+  showMore();
+}
+
+function buildTags() {
+  const set = new Set();
+  sorted.forEach(p => (p.tags || []).forEach(t => set.add(t)));
+  const box = $("tags");
+  ["All", ...[...set].sort()].forEach(t => {
+    const b = el("button", "chip", t);
+    b.setAttribute("aria-pressed", t === "All");
+    b.onclick = () => {
+      state.tag = t;
+      box.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", x === b));
+      reset();
+    };
+    box.append(b);
+  });
+}
+
+$("q").addEventListener("input", e => { state.q = e.target.value; reset(); });
+$("more").addEventListener("click", showMore);
+buildTags();
+reset();
+</script>
+</body>
+</html>
